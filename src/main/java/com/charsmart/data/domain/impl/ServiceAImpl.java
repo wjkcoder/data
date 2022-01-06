@@ -4,11 +4,6 @@ import com.charsmart.data.domain.ServiceA;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-
 /**
  * @Author: Wonder
  * @Date: Created on 2021/12/31 下午4:47
@@ -23,3 +18,4 @@ public class ServiceAImpl implements ServiceA {
 
 
 }
+
