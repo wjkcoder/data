@@ -8,6 +8,14 @@
         <module>data-case</module>
         <module>data-spi/data-spi-dubbo-provider</module>
         <module>data-netty</module>
+        <module>data-seata</module>
+        <module>data-seata/account-service</module>
+        <module>data-seata/order-service</module>
+        <module>data-seata/storage-service</module>
+        <module>data-seata/api-layer</module>
+        <module>data-common</module>
+        <module>data-seata/dubbo-min</module>
+        <module>data-seata/seata-plugin</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -22,12 +30,13 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
-        <mybatis.plus.version>3.4.2</mybatis.plus.version>
+        <mybatis.plus.version>3.4.1</mybatis.plus.version>
         <mybatis.plus.generator.version>3.4.1</mybatis.plus.generator.version>
         <oracle.driver.version>21.5.0.0</oracle.driver.version>
-        <mysql.driver.version>8.0.29</mysql.driver.version>
+        <mysql.driver.version>8.0.22</mysql.driver.version>
         <dubbo.version>3.0.7</dubbo.version>
         <netty.version>4.1.56.Final</netty.version>
+        <seata.version>1.4.2</seata.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -95,9 +104,40 @@
                 <version>${dubbo.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-rpc-rest</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.dubbo</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-rpc-api</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

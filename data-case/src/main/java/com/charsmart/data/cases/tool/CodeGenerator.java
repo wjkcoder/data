@@ -55,7 +55,7 @@ public class CodeGenerator {
         strategy.setEntityBuilderModel(true);
         strategy.setEntityColumnConstant(true);
 
-        strategy.setInclude("name");
+        strategy.setInclude("account","bd_order","bd_storage");
         strategy.setTableFillList(new ArrayList<TableFill>() {{
             add(new TableFill("CREATE_BY", FieldFill.INSERT));
             add(new TableFill("CREATE_DATE", FieldFill.INSERT));
